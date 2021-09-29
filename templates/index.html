@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Rijit's first ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Titanic Survival</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('titanic')}}"method="post">
+    	<input type="number" name="pclass" placeholder="pclass" required="required" />
+        <input type="text" name="name" placeholder="name" required="required" />
+		<input type="text" name="sex" placeholder="sex" required="required" />
+    <input type="number" name="age" placeholder="age" required="required" />
+    <input type="number" name="sibsp" placeholder="sibsp" required="required" />
+    <input type="number" name="parch" placeholder="parch" required="required" />
+    <input type="text" name="ticket" placeholder="ticket" required="required" />
+    <input type="text" name="fare" placeholder="fare" required="required" />
+    <input type="text" name="cabin" placeholder="cabin" required="required" />
+    <input type="text" name="embarked" placeholder="embarked" required="required" />
+    
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ info }}
+
+ </div>
+
+
+</body>
+</html>
